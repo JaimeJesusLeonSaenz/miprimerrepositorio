@@ -1,0 +1,65 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.mycompany.ejerciciosjava;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Jaime León
+ */
+
+
+public class Uno {
+    public int devuelveSuma(int arr[]){
+        int suma=0;
+        for (int i = 0; i <arr.length; i++) {
+            suma+=arr[i];
+        }
+        return suma;
+    }
+        public double devuelveMedia(int sum, int arr[]){
+            return sum/arr.length;
+
+        }
+
+       
+      
+
+      
+       
+
+    public static void main(String[] args) {
+        Scanner teclado=new Scanner(System.in);
+        System.out.println("Introduce la cantidad de números");
+        int cantidadNumeros=teclado.nextInt();
+        int arr[]=new int[cantidadNumeros];
+        System.out.println("Introduce los números del arreglo");
+        for (int i = 0; i < cantidadNumeros; i++) {
+            arr[i]=teclado.nextInt();
+        }
+        int mayor, menor; 
+        menor=mayor=arr[0];
+        for (int j = 1; j < cantidadNumeros; j++) {
+            if (arr[j]>mayor) {
+                mayor=arr[j];
+            }
+            if (arr[j]<menor) {
+                menor=arr[j];
+            }
+            
+        }
+        Uno n1=new Uno(); 
+        int sum=n1.devuelveSuma(arr);
+        System.out.println("La suma es: "+sum);
+        double media=n1.devuelveMedia(sum, arr);
+        System.out.println("La media es: "+media);
+        System.out.println("El mayor valor es: "+mayor);
+        System.out.println("El menor valor es: "+menor);
+    }
+
+    
+}
